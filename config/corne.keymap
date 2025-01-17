@@ -24,18 +24,18 @@
     };
 
     macros {
-        undu: new_macro {
+        undu: undu {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp Z &kp LEFT_CONTROL>;
-            label = "NEW_MACRO";
+            label = "undu";
         };
 
-        redu: new_macro {
+        redu: redu {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp Z &kp LEFT_CONTROL &kp LEFT_SHIFT>;
-            label = "NEW_MACRO";
+            label = "redu";
         };
     };
 
