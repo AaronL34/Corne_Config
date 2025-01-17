@@ -13,13 +13,29 @@
         compatible = "zmk,combos";
 
         controlz {
-            bindings = <&kp F23>;
+            bindings = <&none>;
             key-positions = <12 25>;
         };
 
         redu {
-            bindings = <&kp F22>;
+            bindings = <&none>;
             key-positions = <12 24 25>;
+        };
+    };
+
+    macros {
+        undu: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Z &kp LEFT_CONTROL>;
+            label = "NEW_MACRO";
+        };
+
+        redu: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Z &kp LEFT_CONTROL &kp LEFT_SHIFT>;
+            label = "NEW_MACRO";
         };
     };
 
@@ -67,10 +83,10 @@
 
             display-name = "Raise";
             bindings = <
-&kp TAB    &kp EXCL        &kp AT              &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp KP_ASTERISK  &kp BSPC
-&kp LCTRL  &kp UNDERSCORE  &mt LEFT_CONTROL Z  &kp F22   &kp F23   &trans       &kp MINUS  &kp EQUAL  &kp LBKT              &kp RBKT               &kp BSLH         &kp GRAVE
-&kp LSHFT  &trans          &trans              &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC              &kp RBRC               &kp PIPE         &kp TILDE
-                                               &kp LGUI  &trans    &kp SPACE    &kp SPACE  &trans     &kp RALT
+&kp TAB    &kp EXCL        &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp KP_ASTERISK  &kp BSPC
+&kp LCTRL  &kp UNDERSCORE  &trans  &redu     &undu     &trans       &kp MINUS  &kp EQUAL  &kp LBKT              &kp RBKT               &kp BSLH         &kp GRAVE
+&kp LSHFT  &trans          &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC              &kp RBRC               &kp PIPE         &kp TILDE
+                                   &kp LGUI  &trans    &kp SPACE    &kp SPACE  &trans     &kp RALT
             >;
         };
 
